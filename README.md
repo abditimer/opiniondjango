@@ -1,5 +1,5 @@
 # Pinionated
-Project to build a social network.
+The social network for sharing opinions.
 
 Key features:
 - Share opinions with other users
