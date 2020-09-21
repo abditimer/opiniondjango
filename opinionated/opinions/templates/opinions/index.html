@@ -1,0 +1,20 @@
+{% if latest_question_list %}
+    <ul>
+        {% for opinion in latest_question_list %}
+            <li>
+                <h3>{{ opinion.question_text }}</h3>
+                {% if error_message %}<p>{{error_message}}</p>{% endif %}
+
+                <form action="{% url 'opinions:vote' opinion.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="radio" name='opinion' id="opinion{{ forloop.counter }}" value="{{ opinion.id }}">
+                    <label for="opinion{{ forloop.counter }}">Agree</label></form>
+                    <input type="submit" value="vote">
+                </form>
+                <p>Score: {{ opinion.score_int }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No opinions yet :(</p>
+{% endif %}
