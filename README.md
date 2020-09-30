@@ -1,5 +1,5 @@
-# Pinionated
-The social network for sharing opinions.
+# Opinionated
+The open-source social network for sharing opinions.
 
 Key features:
 - Share opinions with other users
